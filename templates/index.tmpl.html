@@ -1,0 +1,217 @@
+<html>
+  {{template "header.tmpl.html"}}
+  <body>
+    {{template "nav.tmpl.html"}}
+    <section class="hero is-medium has-text-centered full-height">
+      <div class="hero-body" id="bckgrd-img">
+        <div class="container">
+          <h1 id="bulma" class="title white-with-outline">
+            Ben Lipson
+          </h1>
+          <h2 id="modern-framework" class="subtitle white">
+            <strong class="white-with-outline">software developer</strong>
+          </h2>
+          <div class="columns">
+              <div class="column"></div>
+              <div class="column"></div>
+              <div id="npm" class="column">
+                <a href="https://github.com/blipson" target="_blank" id="left-icon">
+                  <i class="fa fa-github-square big-white-with-outline"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/2528556/sonofblip" target="_blank" id="right-icon">
+                  <i class="fa fa-stack-overflow big-white-with-outline"></i>
+                </a>
+              </div>
+              <div class="column"></div>
+              <div class="column"></div>
+          </div>
+          <div id="ghbtns" class="block">
+              <a href="mailto:ben.j.lipson@gmail.com" target="_top" class="button"><i class="fa fa-envelope"></i></a>
+              <a href="tel:3039474183" class="button"><i class="fa fa-phone"></i></a>
+              <a href="https://www.linkedin.com/in/benjamin-lipson-67a83182/" target="_blank" class="button"><i class="fa fa-linkedin"></i></a>
+              <a href="https://twitter.com/nooneisfighting" target="_blank" class="button"><i class="fa fa-twitter"></i></a>
+              <a href="https://soundcloud.com/" target="_blank" class="button"><i class="fa fa-soundcloud"></i></a>
+          </div>
+
+          <p id="download" class="hero-buttons">
+            <a class="button is-primary is-large" onclick="test('about-me-section'); return false;">
+              <span>About Me</span>
+            </a>
+            <a class="button is-large" onclick="test('skills-section'); return false;">
+              Skills and Resume
+            </a>
+          </p>
+        </div>
+          <i class="fa fa-angle-down big-black" id="down-arrow"></i>
+      </div>
+    </section>
+
+    <section class="hero is-medium has-text-centered">
+      <div class="hero-body">
+        <div class="container">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h3 class="title is-2">
+              <span class="icon is-medium">
+              <i class="fa fa-arrows-v"></i>
+              </span>
+                <a href="https://thenextweb.com/dd/2015/08/19/why-long-scrolling-sites-have-become-awesome/#.tnw_P0v7h8o3" target="_blank">
+                  All the <strong>legit</strong> websites do this <strong>long scrolling thing</strong>
+                </a>
+              </h3>
+              <h4 class="subtitle is-4">That's how you know I'm for real</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-me-section" class="hero is-medium has-text-centered half-height">
+        <div class="hero-body grey-bckgrd">
+            <div class="container">
+                <h1 class="title is-2 white">About Me</h1>
+                <svg version="1.1" id="line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="5px" xml:space="preserve">
+                  <path fill="#00d1b2" stroke-width="3" stroke="#00d1b2" d="M0 0 l1120 0"/>
+                </svg>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">
+                    <img src="/static/me.jpg" width="200" height="200" style="border-radius: 50%">
+                </div>
+                <div class="column" style="color: lightgray" align="center">
+                    My name's Ben Lipson and I'm a real go-getter. Let's just say that if programming were a football team, I'd be starting quarterback no doubt. My passions include reducing time to market, coming up with creative solutions to problems, smashing the patriarchy, winning, doing things quickly and with high quality, revolting against the bourgeois ruling capitalist class, music, reading, cooking, and typing real fast.
+                </div>
+                <div class="column"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills-section" class="hero is-medium has-text-centered">
+        <div class="hero-body white-bckgrd">
+            <div class="container">
+                <h1 class="title is-2 black">Skills</h1>
+                <svg version="1.1" id="line_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="5px" xml:space="preserve">
+                  <path fill="#00d1b2" stroke-width="3" stroke="#00d1b2" d="M0 0 l1120 0"/>
+                </svg>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column" align="center">
+                    <h2 class="title" align="center" class="black"><i class="fa fa-cogs"></i> Languages</h2>
+                    <img src="/static/kotlin.png" class="language-icon">
+                    <img src="/static/python.png" class="language-icon">
+                    <img src="/static/javascript.png" class="language-icon">
+                    <img src="/static/java.png" class="language-icon">
+                    <img src="/static/csharp.png" class="language-icon">
+                    <img src="/static/c.png" class="language-icon">
+                    <img src="/static/cplusplus.png" class="language-icon">
+                    <img src="/static/clojure.png" class="language-icon">
+                    <img src="/static/ruby.png" class="language-icon">
+                    <img src="/static/golang.png" class="language-icon">
+                    <img src="/static/html.png" class="language-icon">
+                    <img src="/static/css.png" style="height: 100px; width: 75px; margin: 5%; position:relative; left:10px;">
+                </div>
+                <div class="column" align="center">
+                    <h2 class="title" align="center" class="black"><i class="fa fa-wrench"></i> Tools and Frameworks</h2>
+                    <img src="/static/dropwizard.png" class="language-icon">
+                    <img src="/static/spring.png" class="language-icon">
+                    <img src="/static/django.png" class="language-icon">
+                    <img src="/static/flask.png" class="language-icon">
+                    <img src="/static/AngularJS-Shield.svg" class="language-icon">
+                    <img src="/static/node.png" class="language-icon">
+                    <img src="/static/net.png" class="language-icon">
+                    <img src="/static/opengl.png" class="language-icon">
+                    <img src="/static/cuda.png" class="language-icon">
+                    <img src="/static/oracle.png" class="language-icon">
+                    <img src="/static/postgres.png" class="language-icon">
+                    <img src="/static/sqlserver.png" class="language-icon">
+                </div>
+            </div>
+        </div>
+    </section>
+  <section class="timeline">
+      <ul>
+          <li>
+              <div id="sps-blue" class="white">
+                  <strong class="white">SPS Commerce</strong><time>Sep 2016 - Present</time>Software development using AngularJS, NodeJS, Karma, Jasmine, Oracle SQL, PostGreSQL, Python, Java, Kotlin, Docker, Bash, Mesos, Marathon, AWS, Git, and Agile
+              </div>
+          </li>
+          <li>
+              <div id="prlb" class="white">
+                  <strong class="white">Proto Labs, Inc.</strong><time>June 2015 - Aug 2016</time>Software development using .NET, AngularJS, NUnit, Karma, Jasmine, ElasticSearch, SQL Server, Git, Agile, and Scrum
+              </div>
+          </li>
+          <li>
+              <div id="serenity-forge" class="white">
+                  <strong class="white">Serenity Forge</strong><time>July 2014 - Sep 2014</time>Unity game design and development using Javascript and C#
+              </div>
+          </li>
+          <li>
+              <div id="st-olaf" class="white">
+                  <strong class="white">Saint Olaf College</strong><time>Sep 2011 - May 2015</time>Developer operations using Unix, Xen, LibVert, VirtualBox, VirtManager, and Bash.<br><br>Parallel computation research using OpenMP, OpenMPI, CUDA, C, and C++.<br><br>Web application development using HTML, CSS, JavaScript, Python, MapReduce, Hadoop, and Android.<br><br>Teacher's assistant.
+              </div>
+          </li>
+          <li>
+              <div id="cherry-creek" class="white">
+                  <strong class="white">Cherry Creek High School</strong><time>Aug 2007 - June 2011</time>
+              </div>
+          </li>
+      </ul>
+    </section>
+    <section class="hero is-primary">
+        <a href="/static/Resume.pdf" download>
+          <div id="fade-in-out-hover" class="hero-body white-bckgrd-none pointy">
+            <div class="container" align="center">
+                <h1 class="title is-2 black fade-out-boy">View My Full Resume</h1>
+                <i class="fa fa-download big-black fade-in-boy that-weird-icon"></i>
+            </div>
+          </div>
+        </a>
+    </section>
+
+  <section class="hero is-primary">
+    <div class="hero-body grey-bckgrd">
+        <div class="container" align="center">
+            This site was built by Ben Lipson using the GO programming language on the backend, and javascript with jquery on the front end. Powered by Heroku.
+        </div>
+    </div>
+  </section>
+  </body>
+  <script type="text/javascript">
+      (function() {
+
+          'use strict';
+
+          // define variables
+          var items = document.querySelectorAll(".timeline li");
+
+          // check if an element is in viewport
+          // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+          function isElementInViewport(el) {
+              var rect = el.getBoundingClientRect();
+              return (
+                  rect.top >= 0 &&
+                  rect.left >= 0 &&
+                  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+              );
+          }
+
+          function callbackFunc() {
+              for (var i = 0; i < items.length; i++) {
+                  if (isElementInViewport(items[i])) {
+                      items[i].classList.add("in-view");
+                  }
+              }
+          }
+
+          // listen for events
+          window.addEventListener("load", callbackFunc);
+          window.addEventListener("resize", callbackFunc);
+          window.addEventListener("scroll", callbackFunc);
+
+      })();
+  </script>
+
+</html>
