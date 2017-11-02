@@ -1,0 +1,82 @@
+<html>
+{{template "header.tmpl.html"}}
+
+<body>
+    {{template "nav.tmpl.html"}}
+    <div class="columns">
+        <div class="column" style="padding: 75px;">
+            <a href="/projects/metaclicker" class="card" style="cursor: pointer; display: block;">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content" style="text-align: center;">
+                            <p class="title is-4">META CLICKER</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        CLICK BITCH
+                        <br>
+                        <time datetime="2016-1-1">9:00 PM - 26 Oct 2017</time>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="column" style="padding: 75px;">
+            <a href="/projects/hamming" class="card" style="cursor: pointer; display: block;">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="static/HAMM1NG.jpg" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content" style="text-align: center;">
+                            <p class="title is-4" style="font-family: benary;">HAMM1NG C0DES</p>
+                        </div>
+                    </div>
+
+                    <div class="content" style="font-family: benary;">
+                        HAVE Y0U EVER W0NDERED H0W 0PERAT1NG SYSTEMS PR0TECT AGA1NST DATA C0RRUPT10N WHEN TRANSFERR1NG F1LES T0 0R FR0M AN0THER ST0RAGE
+                        DEV1CE, 0R WHEN MEM0RY GETS CACHED IN RAM? HAMM1NG C0DES ENSURE ERR0R DETECT10N THR0UGH THE USE 0F PAR1TY B1TS ENC0DED W1TH1N THE DATA.
+                        <br>
+                        <time datetime="2016-1-1">9:00 PM - 26 Oct 2017</time>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="column" style="padding: 75px;">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        var items = document.querySelectorAll(".timeline li");
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        function callbackFunc() {
+            for (var i = 0; i < items.length; i++) {
+                if (isElementInViewport(items[i])) {
+                    items[i].classList.add("in-view");
+                }
+            }
+        }
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("resize", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+    })();
+</script>
+
+</html>

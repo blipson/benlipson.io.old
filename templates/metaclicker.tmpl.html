@@ -1,0 +1,166 @@
+<html>
+{{template "header.tmpl.html"}}
+
+<body id='body'>
+    {{template "nav.tmpl.html"}}
+    <div id="myModal" class="modal">
+        <div class="modal-content" style="text-align: center; background-color: black;-moz-border-radius: 15px;
+        border-radius: 15px;">
+            <h1 class="title is-1" align="center" style="color: red">WARNING</h1>
+            <p>
+                <span style="color: red">There</span>
+                <span style="color: green">will</span>
+                <span style="color: blue">be</span>
+                <span style="color: yellow">lots</span>
+                <span style="color: pink">of</span>
+                <span style="color: purple">flashing</span>
+                <span style="color: orange">lights,</span>
+                <span style="color: red">lots</span>
+                <span style="color: green">of</span>
+                <span style="color: blue">loud</span>
+                <span style="color: yellow">noises,</span>
+                <span style="color: pink">and</span>
+                <span style="color: purple">hella</span>
+                <span style="color: orange">spicey</span>
+                <span style="color: red">dank</span>
+                <span style="color: green">memes</span>
+            </p><br/>
+            <button id="consent" class="button is-large" style="background-color: green; border-color: green; color: white;">I consent</button>&emsp;&emsp;
+            <button id="getmeout" class="button is-large" style="background-color: red; border-color: red; color: white;">Nah dawg, that ain't me</button>
+        </div>
+    </div>
+    <h2 class="title is-2 text-flash" align="center">VALUE IS MEASURED IN LABOR! WORK HARD AND CLICK WITH GREAT GUSTO TO ACCUMULATE POINTS!</h1>
+    <h1 class="title is-1 text-flash" align="center">POINTS: <span id="points">0</span></h1>
+    <div id='btn-container'>
+        <button id='1-incr' class="button is-primary is-large bckgrd-text-flash text-flash" style="margin: 25px;">GET A POINT</button>
+    </div>
+    <span style="position: fixed; bottom: 20px;
+                    filter: alpha(opacity=50);
+                    -moz-opacity: 0.5;
+                    -khtml-opacity: 0.5;
+                    opacity: 0.5;">Written in GO
+        <a href="/hammingcodecode">Wanna see the code?</a>
+    </span>
+</body>
+<script type="text/javascript">
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName("close")[0];
+    $(document).ready(function () {
+        modal.style.display = "block";
+    });
+    $('#consent').on('click', function(e) {
+        modal.style.display = 'none';
+    });
+    $('#getmeout').on('click', function(e) {
+        window.history.back();
+    });
+    var i = 0;
+</script>
+<script type="text/javascript">
+    let points = 0;
+    let benchmark = 5;
+    let clickers = [];
+
+    function incrementPoints(amount) {
+        points += amount;
+        $('#points').text(points);
+        if (points >= 5) {
+            $('#5-incr').css('display', '');
+        }
+    }
+
+    function subtractPoints(amount) {
+        points -= amount;
+        $('#points').text(points);
+        if (points <= 5) {
+            $('#5-incr').css('display', 'none');
+        }
+    }
+
+    function addClicker(num) {
+        clickers.push(num);
+    }
+
+    $('#1-incr').on('click', function(e) {
+        incrementPoints(1);
+        // addClicker(1);
+    });
+
+    function metaClick() {
+        if (modal.style.display === 'none') {
+            var doc = document.getElementById("body");
+            doc.style.backgroundColor = getRandomColor();
+            $('.text-flash').css('color', getRandomColor());
+            $('.bckgrd-text-flash').css('background-color', getRandomColor());
+        }
+
+        $('#btn-container').children('button').each(function() {
+            const content = this.innerHTML.split(', ')[1];
+            if (content) {
+                if (points < parseInt(content.substring(0, content.indexOf(' ')))) {
+                    this.style.display = 'none';
+                }
+                if (points >= parseInt(content.substring(0, content.indexOf(' ')))) {
+                    this.style.display = '';
+                }
+            }
+        });
+        if ((points >= benchmark) && !$('#' + benchmark + '-btn').length) {
+            const $newBtn = $('<button>', {'id': (benchmark) + '-btn', 'class': 'button is-primary is-large bckgrd-text-flash text-flash', 'style': 'margin: 25px;'});
+            $newBtn.text('META CLICKER LEVEL ' + benchmark.toString().length + ', ' + benchmark + ' POINTS');
+            $('#btn-container').append($newBtn);
+            $newBtn.on('click', function(e) {
+                const localStr = e.currentTarget.innerHTML
+                let localBenchmark = localStr.substring(localStr.indexOf(',') + 2, localStr.length);
+                localBenchmark = parseInt(localBenchmark.substr(0, localBenchmark.indexOf(' ')));
+                if (points >= localBenchmark) {
+                    if (localBenchmark === 5) {
+                        addClicker(1);
+                    } else {
+                        addClicker(localBenchmark/10);
+                    }
+                    subtractPoints(localBenchmark);
+                }
+            });
+            benchmark *= 10;
+        }
+        for (let i = 0; i < clickers.length; i++) {
+            incrementPoints(clickers[i]);
+        }
+    }
+    setInterval(metaClick, 500);
+</script>
+<script type="text/javascript">
+            (function () {
+                'use strict';
+                var items = document.querySelectorAll(".timeline li");
+                function isElementInViewport(el) {
+                    var rect = el.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+                function callbackFunc() {
+                    for (var i = 0; i < items.length; i++) {
+                        if (isElementInViewport(items[i])) {
+                            items[i].classList.add("in-view");
+                        }
+                    }
+                }
+                window.addEventListener("load", callbackFunc);
+                window.addEventListener("resize", callbackFunc);
+                window.addEventListener("scroll", callbackFunc);
+            })();
+</script>
+</html>

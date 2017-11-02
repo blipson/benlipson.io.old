@@ -34,15 +34,14 @@
           </div>
 
           <p id="download" class="hero-buttons">
-            <a class="button is-primary is-large" onclick="test('about-me-section'); return false;">
+            <a class="button is-primary is-large" href="#about-me-section">
               <span>About Me</span>
             </a>
-            <a class="button is-large" onclick="test('skills-section'); return false;">
+            <a class="button is-large" href="#skills-section">
               Skills and Resume
             </a>
           </p>
         </div>
-          <i class="fa fa-angle-down big-black" id="down-arrow"></i>
       </div>
     </section>
 
@@ -55,9 +54,7 @@
               <span class="icon is-medium">
               <i class="fa fa-arrows-v"></i>
               </span>
-                <a href="https://thenextweb.com/dd/2015/08/19/why-long-scrolling-sites-have-become-awesome/#.tnw_P0v7h8o3" target="_blank">
-                  All the <strong>legit</strong> websites do this <strong>long scrolling thing</strong>
-                </a>
+                <span style="color: #00d1b2;">All the <strong>legit</strong> websites do this <strong>long scrolling thing</strong></span>
               </h3>
               <h4 class="subtitle is-4">That's how you know I'm for real</h4>
             </div>
@@ -110,7 +107,7 @@
                     <img src="/static/ruby.png" class="language-icon">
                     <img src="/static/golang.png" class="language-icon">
                     <img src="/static/html.png" class="language-icon">
-                    <img src="/static/css.png" style="height: 100px; width: 75px; margin: 5%; position:relative; left:10px;">
+                    <img src="/static/cssreal.png" class="language-icon">
                 </div>
                 <div class="column" align="center">
                     <h2 class="title" align="center" class="black"><i class="fa fa-wrench"></i> Tools and Frameworks</h2>
@@ -180,14 +177,8 @@
   </body>
   <script type="text/javascript">
       (function() {
-
           'use strict';
-
-          // define variables
           var items = document.querySelectorAll(".timeline li");
-
-          // check if an element is in viewport
-          // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
           function isElementInViewport(el) {
               var rect = el.getBoundingClientRect();
               return (
@@ -197,7 +188,6 @@
                   rect.right <= (window.innerWidth || document.documentElement.clientWidth)
               );
           }
-
           function callbackFunc() {
               for (var i = 0; i < items.length; i++) {
                   if (isElementInViewport(items[i])) {
@@ -205,13 +195,9 @@
                   }
               }
           }
-
-          // listen for events
           window.addEventListener("load", callbackFunc);
           window.addEventListener("resize", callbackFunc);
           window.addEventListener("scroll", callbackFunc);
-
       })();
   </script>
-
 </html>

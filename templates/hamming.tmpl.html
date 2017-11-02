@@ -1,0 +1,413 @@
+<html>
+{{template "header.tmpl.html"}}
+
+<body>
+    {{template "nav.tmpl.html"}}
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <h1 class="title is-2" align="center" style="font-family: benary;">
+                        HAMM1NG C0DES
+                    </h1>
+                    <h4 class="title is-5" align="center" style="font-family: benary;">
+                        ENTER A B1NARY STR1NG AS 1NPUT AND H1T ENTER
+                        <p class="title is-6" style="font-family: benary; text-align: center;">CL1CK
+                            <a target="_blank" href="https://www.mathsisfun.com/binary-number-system.html">HERE</a>
+                            1F Y0U D0N'T KN0W WHAT B1NARY 1S 0R H0W 1T W0RKS</p>
+                    </h4>
+                    <input id="hamming-input" class="input" type="text" placeholder="Text input" autofocus>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <h2 id="hamming-header" class="title is-3" align="center" style="font-family: benary;">
+                    </h2>
+                    <h3 id="hamming-result" class="title is-4" align="center" style="font-family: benary;">
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <div class="content is-medium">
+                        <p style="font-family: benary;">&emsp;&emsp;1N THE M1D 1940S A MAN NAME R1CHARD HAMM1NG W0RKED 0N AN ELECTR0MECHAN1CAL RELAY MACH1NE
+                            CALLED THE BELL M0DEL V. BACK THEN, C0MPUT1NG MACH1NES WERE A L0T SL0WER. THE BELL M0DEL V WAS
+                            MEASURED 1N CYCLES PER SEC0ND. T0 G1VE S0ME PERSPECT1VE, A M0DERN CPU M1GHT BE AR0UND 3.5GHZ,
+                            WH1CH 1S APPR0X1MATELY 3,500,000,000 CYCLES PER SEC0ND. W0RKERS L1KE R1CHARD HAMM1NG HAD T0 FEED
+                            THE1R PR0GRAM 1NPUT 1NT0 THE MACH1NE 0N PUNCHED PAPER TAPE WH1CH WAS 7/8 0F AN 1NCH W1DE AND
+                            HAD UP T0 6 H0LES PER R0W. EACH H0LE W0ULD REPRESENT A B1T 0F DATA, E1THER A 0 1F 1T WERE PUNCHED
+                            THR0UGH, 0R A 1 1F 1T WASN'T. 1T WAS REQU1RED THAT THE BELL M0DEL V BE G1VEN 1NPUT 24/7. HAMM1NG
+                            AND H1S C0W0RKERS, N0T WANT1NG T0 W0RK 0N EVEN1NGS AND WEEKENDS, SET UP A MACH1NE T0 FEED J0BS
+                            1NT0 THE C0MPUTER AUT0MAT1CALLY. H0WEVER, WHEN THE BELL M0DEL V H1T AN ERR0R 1N THE 1NPUT, 1T
+                            W0ULD MAKE A L0UD N01SE AND ST0P ALL W0RK 1NDEF1N1TELY UNT1L 0NE 0F THE 0PERAT0RS CAME 1N AND
+                            F1XED 1T. AS Y0U CAN 1MAG1NE, TH1S BECAME VERY FRUSTRAT1NG F0R R1CHARD HAMM1NG. HE SA1D T0 H1MSELF
+                            "DAMN 1T, 1F THE MACH1NE CAN DETECT AN ERR0R, WHY CAN'T 1T L0CATE THE P0S1T10N 0F THE ERR0R AND
+                            C0RRECT 1T?" HE WENT T0 W0RK 0N THE PR0BLEM AND DEVEL0PED 1NCREAS1NGLY C0MPLEX AND P0WERFUL ERR0R
+                            C0RRECT10N ALG0R1THMS. AFTER A FEW YEARS, 1N 1950, HE PUBL1SHED WHAT'S REFERRED T0 N0W AS THE
+                            'HAMM1NG C0DE', WH1CH 1S A SET 0F ERR0R C0RRECT10N C0DES THAT CAN BE ENC0DED 1NT0 THE DATA 1TSELF.
+                            1T WAS SUCH A G00D 1DEA, M0ST SYSTEMS THAT UT1L1ZE ECC (ERR0R C0RRECT1NG C0DE) MEM0RY ST1LL ENC0DE
+                            DATA W1TH HAMM1NG C0DES T0DAY, 1NCLUD1NG DYNAM1C RAND0M ACCESS MEM0RY, 0R RAM AS A SH0RTHAND.
+                            TH1S PREVENTS ELECTR1CAL 0R MAGNET1C 1NTERFERENCE FR0M C0RRUPT1NG DATA. Y0UR C0MPUTER AT H0ME
+                            1S ALM0ST CERTA1NLY UT1L1Z1NG HAMM1NG C0DES!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <div class="content is-medium">
+                        <p style="font-family: benary; text-align: center;">
+                            S0 H0W D0 HAMM1NG C0DES ACTUALLY W0RK?
+                        </p>
+                        <p style="font-family: benary;">
+                            1MAG1NE WE HAVE A 3 B1T NUMBER REPRESENT1NG A P1ECE 0F DATA. 
+                            WE CAN REPRESENT TH1S NUMBER AS A CUBE WHERE EACH B1T REPRESENTS AN AX1S W1TH EACH OF THE 
+                            P0SS1B1L1T1ES 0N 0NE 0F THE C0RNERS.
+                        </p>
+                        <div class="columns">
+                            <div class="column"></div>
+                            <pre>
+000 ---------001
+ | \         | \
+ | 100---------101
+ |  |        |  |
+ |  |        |  |
+010-|-------011 |
+   \|          \|
+   110---------111
+                            </pre>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                    <div class="content is-medium">
+                        <p style="font-family: benary;">
+                            LET'S USE THE F1RST TW0 B1TS AS DATA AND THE TH1RD B1T AS A PAR1TY B1T. 
+                            1N TH1S CASE, THE PAR1TY W0ULD CAUSE US T0 L0SE 4 DATAP01NTS, 
+                            BUT 1T'S W0RTH 1T T0 BE ABLE T0 DETECT A S1NGLE B1T FA1LURE (WH1CH TRANSF0RMS 
+                            AN EVEN C0UNT 0F 1'S 1NT0 AN 0DD C0UNT 0F 1'S). LET'S MARK ALL THESE 0DD NUMBERS W1TH A STAR.
+                        </p>
+                        <div class="columns">
+                            <div class="column"></div>
+                            <pre>
+ 000 --------*001
+  | \         | \
+  | *100---------101
+  |  |        |  |
+  |  |        |  |
+*010-|-------011 |
+    \|          \|
+    110---------*111
+                            </pre>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                    <div class="content is-medium">
+                        <p style="font-family: benary;">
+                            EACH 0DD (WR0NGLY TRANSM1TTED) IS C0RNERED BY AN EVEN (C0RRECTLY TRANSMITTED) NUMBER.
+                            S0 1F WE RECE1VE AN 0DD NUMBER (L1KE 100), WE CAN BE SURE 1T'S WR0NG. TH1S 1S CALLED 1 B1T ERR0R DETECT1NG C0DE.
+                            <br/><br/>
+                            N0W LET'S REM0VE AN0THER B1T 0F DATA AND USE 1T F0R PAR1TY AS WELL (LEAV1NG US W1TH 0NE B1T 0F DATA AND TW0 B1TS 0F PAR1TY).
+                            LET'S ASSUME THAT 000 AND 111 ARE B0TH VAL1D DATA REPRESENTAT10NS, AND ALL 0F THE 0THER P0SS1B1L1T1ES AREN'T, LEAV1NG US W1TH TH1S CUBE.
+                        </p>
+                        <div class="columns">
+                            <div class="column"></div>
+                            <pre>
+ 000 --------*001
+  | \         | \
+  | *100--------*101
+  |  |        |  |
+  |  |        |  |
+*010-|------*011 |
+    \|          \|
+    *110--------111
+                            </pre>
+                            <div class="column"></div>
+                        </div>
+                    </div>
+                    <div class="content is-medium">
+                        <p style="font-family: benary;">
+                            1F Y0U REC1EVE A WR0NGLY TRANSM1TTED P1ECE 0F DATA (L1KE 100), THAT P1ECE 0F DATA
+                            0NLY HAS 1 VAL1D NE1GHB0R (000 1S VAL1D WH1LE 110 AND 101 ARE N0T). WE CAN C0RRECT TH1S P1ECE 0F DATA T0 1NSTEAD
+                            TRANSM1T 000. TH1S 1S CALLED A 1 B1T ERR0R C0RRECT1NG C0DE. N0TE THAT A 1 B1T ERR0R C0RRECT1NG C0DE 1S ALS0 A 
+                            2 B1T ERR0R DETECT10N C0DE. WE CAN C0NT1NUE T0 1NCREASE THE S1ZE 0F THE DATA 1NF1N1TELY S0 L0NG AS WE PUT THE C0RRECT NUMBER 
+                            0F PAR1TY B1TS 1N.
+                            <br/><br/>
+                            T0 PUT 1T M0RE GENERALLY, 1F Y0U HAVE N PAR1TY B1TS, Y0U HAVE AN N B1T ERR0R DETECT1NG C0DE. 1F Y0U HAVE 2N B1TS, 
+                            Y0U HAVE AN N B1T ERR0R C0RRECT1NG C0DE. 1T G0ES UP BY P0WERS 0F 2. ALS0 Y0U NEED T0 BE SURE THE DATA 1S 
+                            0RDERED SUCH THAT THE "VAL1D" C0DES D0N'T B0RDER 0NE AN0THER.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <div class="content is-medium">
+                        <p style="font-family: benary; text-align: center;">
+                            LET'S PUT TH1S 1NT0 PSUED0C0DE, THE GENERAL ALG0R1THM 1S AS F0LL0WS:
+                        </p>
+                        <p style="font-family: benary;">
+                            1. CALCULATE THE LENGTH 0F THE HAMM1NG C0DE
+                        </p>
+                        <div class="columns">
+                            <div class="column" style="padding-left: 125px; padding-right: 125px;">
+                                <p style="font-family: benary;">
+                                    ACCUMULATE THE NUMBER 0F PAR1TY B1TS NEEDED BY 1NCREMENT1NG UNT1L THE NUMBER 0F PAR1TY B1TS PLUS THE LENGTH 0F 1NPUT 1S GREATER
+                                    THAN 2 RA1SED T0 THE NUMBER 0F PAR1TY B1TS.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column"></div>
+                            <div class="column">
+                                <table class="table is-bordered is-striped">
+                                    <thead>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                LENGTH 0F 1NPUT
+                                            </b>
+                                        </th>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                PAR1TY B1TS NEEDED
+                                            </b>
+                                        </th>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                T0TAL HAMM1NG C0DE LENGTH
+                                            </b>
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <td style="text-align: center;">1</td>
+                                        <td style="text-align: center;">3</td>
+                                        <td style="text-align: center;">4</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">2</td>
+                                        <td style="text-align: center;">3</td>
+                                        <td style="text-align: center;">5</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">3</td>
+                                        <td style="text-align: center;">3</td>
+                                        <td style="text-align: center;">6</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">4</td>
+                                        <td style="text-align: center;">4</td>
+                                        <td style="text-align: center;">8</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">5</td>
+                                        <td style="text-align: center;">4</td>
+                                        <td style="text-align: center;">9</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">6</td>
+                                        <td style="text-align: center;">4</td>
+                                        <td style="text-align: center;">10</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">7</td>
+                                        <td style="text-align: center;">4</td>
+                                        <td style="text-align: center;">11</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">8</td>
+                                        <td style="text-align: center;">4</td>
+                                        <td style="text-align: center;">12</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="column"></div>
+                        </div>
+                        <p style="font-family: benary;">
+                            2. 1NSERT THE PAR1TY B1TS 1NT0 THE C0RRECT P0S1T10N
+                        </p>
+                        <div class="columns">
+                            <div class="column" style="padding-left: 125px; padding-right: 125px;">
+                                <p style="font-family: benary;">
+                                    PAR1TY B1TS 0NLY G0 1NT0 P0S1T10NS THAT ARE A P0WER 0F TW0. 1N 0THER W0RDS, THE 1ST, 2ND, 4TH, 8TH, 16TH, ETC... P0S1T10NS.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column"></div>
+                            <div class="column">
+                                <table class="table is-bordered is-striped">
+                                    <thead>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                1NPUT
+                                            </b>
+                                        </th>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                L0CAT10N 0F PAR1TY B1TS
+                                            </b>
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <td style="text-align: center;">11010011</td>
+                                        <td style="text-align: center;">xx1x101x0011</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="column"></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column" style="padding-left: 125px; padding-right: 125px;">
+                                <p style="font-family: benary;">
+                                    CAN Y0U SEE THE PATTERN? THE P0S1T10NS 0F THE PAR1TY B1TS (STEP 2) W1LL HELP Y0U SEE H0W MANY PAR1TY B1TS WERE NEEDED (STEP
+                                    1).
+                                </p>
+                            </div>
+                        </div>
+                        <p style="font-family: benary;">
+                            3. CALCULATE THE C0RRECT VALUES F0R THE PAR1TY B1TS
+                        </p>
+                        <div class="columns">
+                            <div class="column" style="padding-left: 125px; padding-right: 125px;">
+                                <p style="font-family: benary;">
+                                    THE B1TS THAT ALTER A PAR1TY B1T ARE DETERM1NED BY THE POS1T1ON OF THE PAR1TY B1T. Y0U'LL HAVE T0 KN0W H0W T0 D0
+                                    <a target="_blank" href="http://web.math.princeton.edu/math_alive/1/Lab1/BinAdd.html">B1NARY ADD1T10N</a>
+                                    T0 UNDERSTAND TH1S PART. 1F 1T'S 1N THE 1ST POS1T1ON, THEN 1T W1LL START W1TH THE F1RST B1T AND ADD 1 B1T, SK1P 1 B1T, ETC...
+                                    1F 1T'S 1N POS1T1ON 2, THEN 1T W1LL START W1TH THE SECOND B1T AND ADD 2 B1TS, SK1P 2
+                                    B1TS, ETC... POS1T1ON 4 STARTS W1TH THE FOURTH B1T AND ADDS 4, SK1PS 4, ETC... AND SO
+                                    ON AND SO FORTH. THE X'S W1LL C0UNT AS 0'S.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column"></div>
+                            <div class="column">
+                                <table class="table is-bordered is-striped">
+                                    <thead>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                UNCALCULATED HAMM1NG C0DE
+                                            </b>
+                                        </th>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                B1TS T0 ADD T0GETHER
+                                            </b>
+                                        </th>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                RESULT
+                                            </b>
+                                        </th>
+                                        <th style="font-family: benary; text-align: center;">
+                                            <b>
+                                                HAMM1NG C0DE W1TH ADDED B1T
+                                            </b>
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <td style="text-align: center;"><mark>x</mark>x1x101x0011</td>
+                                        <td style="text-align: center;"><mark>x</mark>x<mark>1</mark>x<mark>1</mark>0<mark>1</mark>x<mark>0</mark>0<mark>1</mark>1</td>
+                                        <td style="text-align: center;">0</td>
+                                        <td style="text-align: center;"><mark>0</mark>x1x101x0011</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">0<mark>x</mark>1x101x0011</td>
+                                        <td style="text-align: center;">0<mark>x1</mark>x1<mark>01</mark>x0<mark>01</mark>1</td>
+                                        <td style="text-align: center;">1</td>
+                                        <td style="text-align: center;">0<mark>1</mark>1x101x0011</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">011<mark>x</mark>101x0011</td>
+                                        <td style="text-align: center;">011<mark>x101</mark>x001<mark>1</mark></td>
+                                        <td style="text-align: center;">1</td>
+                                        <td style="text-align: center;">011<mark>1</mark>101x0011</td>
+                                    </tbody>
+                                    <tbody>
+                                        <td style="text-align: center;">0111101<mark>x</mark>0011</td>
+                                        <td style="text-align: center;">0111101<mark>x0011</mark></td>
+                                        <td style="text-align: center;">0</td>
+                                        <td style="text-align: center;">0111101<mark>0</mark>0011</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="column"></div>
+                        </div>
+                        <div class="columns">
+                            <div class="column" style="padding-left: 125px; padding-right: 125px;">
+                                <p style="font-family: benary;">
+                                    S0 THE F1NAL HAMM1NG C0DE F0R THE 1NPUT 11010011 W1LL BE 011110100011
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <span style="position: fixed; bottom: 20px;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;">Written in GO
+        <a href="/hammingcodecode">Wanna see the code?</a>
+    </span>
+</body>
+<script type="text/javascript">
+    $("#hamming-input").on('keyup', function (e) {
+        if (e.keyCode == 13) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                $("#hamming-header").text("CALCULAT1NG...");
+                $("#hamming-result").text("");
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    $("#hamming-header").text("HERE 1S Y0UR HAMM1NG C0DE BEEP B00P");
+                    $("#hamming-result").text(JSON.parse(xmlHttp.responseText).hamming_code);
+                } else if (xmlHttp.readyState === 4 && xmlHttp.status === 500) {
+                    $("#hamming-header").text("*BZZT* ERR0R! CAN. N0T. C0MPUTE. *SAD B00P*");
+                    $("#hamming-result").text(JSON.parse(xmlHttp.responseText).error.toUpperCase());
+                }
+            }
+            xmlHttp.open("GET", "http://www.benlipson.io/hamming?code=" + $("#hamming-input").val(), true);
+            xmlHttp.send(null);
+        }
+    });
+</script>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        var items = document.querySelectorAll(".timeline li");
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        function callbackFunc() {
+            for (var i = 0; i < items.length; i++) {
+                if (isElementInViewport(items[i])) {
+                    items[i].classList.add("in-view");
+                }
+            }
+        }
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("resize", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+    })();
+</script>
+
+</html>

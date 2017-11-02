@@ -1,0 +1,10 @@
+.float {
+    position: absolute;
+}
+
+canvas {
+    width: 100vw;
+    height: 92.75vh;
+    display: block;
+}
+

@@ -1,0 +1,17 @@
+<html>
+  {{template "musicvis.header.tmpl.html"}}
+  <body>
+    {{template "nav.tmpl.html"}}
+    <a class="button is-primary is-large floaty" style="position: absolute; margin: 50px;" onclick="drawRectangles();">
+      Generate Rectangles
+    </a>
+    <span>Gradient?</span><input id="gradient" type="checkbox" />
+    <canvas id="musicvis-canvas"></canvas>
+    <span style="position: absolute; bottom: 20px;
+                 filter: alpha(opacity=50);
+                 -moz-opacity: 0.5;
+                 -khtml-opacity: 0.5;
+                 opacity: 0.5;">Written with shaders using WebGL. <a href="/rectanglecode">Wanna see the code?</a></span>
+  </body>
+  <script src="/static/js/musicvis.js"></script>
+</html>

@@ -1,0 +1,48 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lipson</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bulma.css">
+  <link rel="stylesheet" href="/static/main.css">
+  <link rel="stylesheet" href="/static/musicvis.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+
+  <meta name="theme-color" content="#00d1b2">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--<script src="/static/webgl/glMatrix-0.9.5.min.js"></script>-->
+  <script src="/static/webgl/webgl-utils.js"></script>
+
+  <script>
+      $(document).ready(function(){
+          $("a").on('click', function(event) {
+              if (this.hash !== "") {
+                  event.preventDefault();
+                  var hash = this.hash;
+                  $('html, body').animate({
+                      scrollTop: $(hash).offset().top
+                  }, 800, function(){
+                      window.location.hash = hash;
+                  });
+              }
+          });
+      });
+  </script>
+
+  <script>
+    function resize(canvas) {
+        const displayWidth  = canvas.clientWidth;
+        const displayHeight = canvas.clientHeight;
+
+        if (canvas.width  !== displayWidth ||
+            canvas.height !== displayHeight) {
+
+            canvas.width  = displayWidth;
+            canvas.height = displayHeight;
+        }
+    }
+  </script>
+</head>
