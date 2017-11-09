@@ -42,12 +42,12 @@ func main() {
 		c.HTML(http.StatusOK, "ontravel.tmpl.html", nil)
 	})
 
-	router.GET("/projects", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "projects.tmpl.html", nil)
+	router.GET("/blog/ontechnology", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "ontechnology.tmpl.html", nil)
 	})
 
-	router.GET("/projects/metaclicker", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "metaclicker.tmpl.html", nil)
+	router.GET("/projects", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "projects.tmpl.html", nil)
 	})
 
 	router.GET("/projects/hamming", func(c *gin.Context) {
