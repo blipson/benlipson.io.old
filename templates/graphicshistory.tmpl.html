@@ -1,0 +1,395 @@
+<html>
+{{template "header.tmpl.html"}}
+
+<body>
+    {{template "nav.tmpl.html"}}
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <h1 class="title is-2" align="center">
+                        A Brief History and Summary of Graphics Programming
+                    </h1>
+                    <div class="content is-medium">
+                        <p>&emsp;&emsp;Let’s talk about the graphics pipeline, and specifically the parts of the graphics pipeline
+                            you can control through programming. It's essentially the process the computer takes to turn
+                            code into graphics displayed on the screen. Right now there are a lot of steps and substeps within
+                            this pipeline, and we can control a decent number of them with the use of high level languages.
+                            To better understand where we’re at now it’s best to look at where we’ve come from. I’ll start
+                            with Pong, a 2D video game created in 1972 by Nolan Kay Bushnell.
+                        </p>
+                        <div class="card-image" style="width:50%; left: 25%;">
+                            <figure class="image is-4by3">
+                                <img src="/static/pong.png" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">Just look at that dope gameplay</p>
+                        <p>&emsp;&emsp;Back then computers were a lot less powerful, computing power was a huge constraint.
+                            When Bushnell first thought of making a computer arcade game, he wanted to make a game similar
+                            to Spacewar, something he played a lot and a game that was developed at MIT because they had
+                            the resources to do so. Bushnell tried to find a way to make a new game that was economical and
+                            could be sold to arcades. But he realized that no matter how many quarters he made off his game,
+                            it just wouldn’t cover the cost of the $4,000 “mini” computer (which was the size of a refrigerator,
+                            and was the cheapest on the market at the time) that was required to run it. Bushnell, ever persistent,
+                            tried to find elements of his game (like the stars in the background) that he could generate
+                            directly on the hardware of a chip rather than in the CPU of the computer. That’s when he had
+                            his big breakthrough. “Why not do it all on the hardware?” he asked himself. Instead of writing
+                            code to run on a processor, he designed switches on an actual circuit board to run the logic
+                            of the game and map the colors to the screen. This revolutionary idea allowed him to create the
+                            game for the measly cost of $1,000 and sparked his career. He’d later go on to found the company
+                            Atari, and create Pong using a similar strategy. He wrapped Pong’s circuit in one of the world’s
+                            first gaming consoles (it was solely dedicated to playing Pong), which originally sold to arcades
+                            for around $1,200 a pop, producing a nice profit. It became clear to the world that running graphics
+                            processing as close to the hardware was easily the most efficient way to do it. At this point
+                            the full graphics pipeline looked something like this.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/screen.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">If it looks simple that's because it is. The hardware talks directly to the screen, there's nothing
+                            more to it.</p>
+                        <p style="text-align: center;">Next up we’ll jump to the year 1977 and talk about one of my favorite movies of all time.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/deathstar.jpg" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">DUN DUN DUNN, DUN DA DUNNNN, DUN DA DUNNNNNN</p>
+                        <p>&emsp;&emsp;Throughout the years this simple concept of running logic on hardware was utilized more
+                            in games, movies, and television. A particularly notable instance comes from Star Wars IV: A
+                            New Hope. Larry Cuba was tasked with implementing the animation for the death star. Before that
+                            the vast majority of graphics were done in 2D, using a cartesian coordinate system with an X
+                            and Y axis. Cuba created an application in the GRASS (GRAphics Symbiosis System) programming
+                            language that allowed for the input of a third Z axis. Not only that, but his application allowed
+                            for all the logic having to do with basic transformations, like rotation and scaling, as well
+                            as the displaying of the model to a 2D picture, to run directly on the hardware. It was wildly
+                            efficient, but Cuba hit a snag, which would end up exposing one of the more difficult problems
+                            in the history of computer graphics. The only reason the display was able to happen directly
+                            on the hardware was because it used parallel projection instead of true perspective, which essentially
+                            means that all the geometry of the scene was defined by rays being cast out from the perspective
+                            of the camera, and not as actual models in 3D space. Cuba stated about the problem, “...I needed
+                            perspective for this project, so I was back to using software for the projection and therefore
+                            was *not* able to animate the scene in real time.” In fact, moving the perspective logic back
+                            to the software made each frame get generated in around 12 hours and slowed his work down immensely.
+                            In the end, he was able to finish the death star animation in the nick of time despite the long
+                            processing time. We’ve now added a few steps in our graphics pipeline because of the constraints
+                            Cuba faced.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/geometryandscreen.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">We have two steps that run as software before we're able to directly to the screen. In these diagrams
+                            going forward, green will depict high level software that runs on the CPU and orange will depict
+                            direct hardware access.</p>
+                        <p>&emsp;&emsp;Fast forward 5 years to 1982. 3D computer graphics evolved from being added flare in
+                            movies, to being entirely what movies could be comprised of. A film called Tron took the same
+                            CPU-computed vector graphics system that brought us the death star and expanded on it to create
+                            the world’s first movie with extensive 3D graphics. To achieve this, engineers working for Disney
+                            had to use elaborate matting strategies and complex sorting algorithms to create the illusion
+                            of a world made up of solid surfaces. The processing time was even longer for this movie because
+                            it had so much computation to do; it took up to 30 hours per frame.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/tron.jpg" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">A whole world of graphics!? Whaaaaat!?</p>
+                        <p>&emsp;&emsp;In the same year, a new concept was made popular that would rock the foundation of 3D
+                            graphics. The Commodore 64 had just come out, a personal computer that introduced rasterization.
+                            Rasterization allows you to represent images on your display in a grid system of rectangular
+                            points called pixels. The images are typically saved and parsed in a dot matrix structure, which
+                            is simply a two-dimensional patterned array. Dot matrix patterns have been used in knitting for
+                            centuries! Anyway, rasterization opened the door for film makers to innovate within the space
+                            of entertainment. Mapping pixels to colors allowed for an alternative to the vector graphics
+                            used to compute earlier models (like the death star or the models in Tron). The company Pixar
+                            used a combination of these strategies when creating their first ever animated short ‘Luxo Jr.’
+                            in 1985. They used the CPU to compute all of the geometry and effects of the scene, and then
+                            came up with algorithms to translate that geometry into a 2D pixel matrix format. This process
+                            would become known to the world as ‘rasterization’ or ‘rendering’, and Pixar would end up being
+                            pretty damn good at it. This puts another step in our graphics pipeline!
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/luxojr.jpg" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">You probably recognize that cute lil' lamp.</p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/rasterization.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">This is actually pretty much the same general pipeline we use today. All further innovation has been
+                            done within each of these boxes, specifically in getting portions of them to run closer to the
+                            hardware of the GPU.
+                        </p>
+                        <p>&emsp;&emsp;We didn’t really hit another high mark for 3D animation until the mid 1990s when larger
+                            film studios and design firms began to realize that they could really make a lot of money off
+                            of animated films and software products. In 1993 the first big budget CGI film, Jurassic Park,
+                            was released. Jurassic Park was special in that it utilized what’re called ‘animatronics’, which
+                            are lifelike 3D models made to scale and built using robotics to move in a particular way (in
+                            this case like how dinosaurs do). You film using these animatronics, and then layer your effects,
+                            like texturing, lighting, shading, etc… over it. This greatly reduced the amount of computation
+                            required because most of the geometry was taken care of by the animatrons.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/jurassicpark.jpg" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            You can see why this required a big budget.
+                        </p>
+                        <p>&emsp;&emsp;1994 marked another important year, when the Boeing 777 flight was tested by aerospace
+                            engineers entirely in ansys, a 3D simulation software that allows you to upload models of whatever
+                            you want and define the parameters that constrain your test. This is merely one example of CAD
+                            (computer aided design) software changing the world of product design. It’d be way too long to
+                            go into detail about all examples.
+                        </p>
+                        <p>&emsp;&emsp;1995 was also a big year. You notice how these important years are getting closer and
+                            closer together? Just you wait. Another one of my favorite movies of all time, Toy Story, was
+                            released! It was a huge innovation because it was the world’s first fully CGI movie. More than
+                            that, it was the first instance of really intertwining CGI with storytelling. Everything from
+                            the storyboard through the script and the voice acting and the clay modeling and the sets and
+                            animations and effects served the final step of rendering. It was the first time where the entire
+                            narrative process had been wrapped within the context of 3D graphics. Needless to say, Toy Story
+                            was a huge hit and pushed Pixar forward as an industry leader within the space of entertainment.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/toystory.jpg" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            Woody has that smug look on his face of someone who started a dynasty.
+                        </p>
+                        <p>&emsp;&emsp;By 1997 interest had grown in 3D graphics to the point where everyday programmers wanted
+                            to be able to make their own graphics projects at home without requiring the big budget that
+                            comes along with being a movie studio or design firm. All of these algorithms and strategies
+                            for doing geometry, animation, effects, and rendering were great, but they were all wrapped in
+                            proprietary software applications that were owned by large companies. No one could touch them!
+                            A company called The Khronos Group was founded with the intent of giving developers an API-level
+                            interface to be able to make graphics software. They achieved their goal by releasing the first
+                            version of OpenGL. The graphics pipeline remained unaltered (for now), but it was now easy for
+                            a developer to simply import OpenGL into their C or C++ project and start making advanced 3D
+                            graphics. This was an absolutely huge event because it allowed for innovation to happen from
+                            the comfort of a single developer’s desk chair. As you can imagine, the world of graphics programming
+                            grew exponentially because of this accessibility.
+                        </p>
+                        <p>&emsp;&emsp;The early 2000s brought with them two drivers for innovation: the internet, and the video
+                            game industry. Mozilla, the open source software community founded by members of the Netscape
+                            company, was getting a lot traction with its rendering software. It was proof that the concepts
+                            of 3D animation could be applied within web pages. To the same end, a 3D design company named
+                            Sketchup released the first ever web-based CAD system. On the video game side, the Final Fantasy
+                            movie (entitled The Spirits Within) became one of the first programs to animate tears, water
+                            and other liquids through the use of a system of small dots in 3D space called particles. The
+                            particles would have liquid-based physics applied to them, and then a reflective texture overlaid
+                            atop them. Also in the video game space, the DOOM3 graphics engine, in 2003, became the first
+                            high level program that would generate everything for you so you wouldn’t even have to worry
+                            very much about coding. Many video game startups and indie companies still use this same strategy
+                            with newer software programs (like Unity or Unreal Engine).
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/finalfantasy.jpg" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            Final Fantasy: The Spirits Within was a terrible movie, but that water effect is siiiiick.
+                        </p>
+                        <p>&emsp;&emsp;In 2004 the Khronos group changed graphics programming again. They released a second
+                            version of OpenGL, known as OpenGL 2.0, which created a new high level language for running programs
+                            on the GPU instead of the CPU. This was a huge deal because of the parellelization that the GPU
+                            offers 
+                            (<a href="https://www.youtube.com/watch?v=-P28LKWTzrI" target="_blank">here’s a fun demo showing this</a>). They called these programs shader programs, and the C-like
+                            language they created they called GLSL (Graphics Library Shader Langague). Specifically they
+                            introduced two types of shaders, vertex shaders and fragment shaders. Vertex shaders are fed
+                            data about the specific vertices of the polygons through blocks in memory called vertex array
+                            objects. They take this info as input, run all their logic on the GPU, then output the new position
+                            of each vertex (there must be a 1-to-1 relationship between input vertices and output vertices).
+                            They typically perform geometric transformations like translation, scaling, and rotation (though
+                            they can do a lot of other things too. For a good overview check out
+                            <a href="http://vertexshaderart.com/" target="_blank">this website</a>. An alternative to using vertex shaders is to use the CUDA platform, created
+                            by NVidia in 2007. It allows you to write your GPU instructions in C++ instead of GLSL. It doesn’t
+                            particularly matter which you pick, they both do a good job, but typically programmers have an
+                            easier time understanding CUDA at first (I know I did) because the logic and the code look like
+                            what you’re used to. In the next phase, the fragment shader takes the concept of rasterization
+                            and pushes it onto the GPU. After the initial rasterization happens, the software will take the
+                            pixels and for each one generate a fragment, which is a block in memory that holds all of the
+                            data required about that pixel for any given frame. This data includes the X and Y coordinates,
+                            and all the interpolated per-vertex values from the vertex shader. These frames are used as input
+                            to the shader, then the fragment shader runs its logic on the GPU, and outputs a depth value
+                            and a color value associated with that pixel. Fragment shaders are typically used for lighting,
+                            texturing, and other effects (again can do a lot of other things.
+                            <a href="https://www.shadertoy.com/" target="_blank">Check it out!</a>). This is the first time in a long time that the graphics pipeline has been
+                            altered in a substantial way!
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/vertexshader.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            Where green denotes a high level program running on the CPU, purple now denotes a high level program running on the GPU.
+                        </p>
+                        <p>&emsp;&emsp;Another five years later, in 2009, innovations in graphics programming were still in full
+                            swing. The Khronos group released OpenGL 3.0 which brought a new shader with it called the geometry
+                            shader. This allowed for all the geometry necessary for animations and whatnot to be run on the
+                            GPU. Along with that, other innovations were happening to combine graphics with real life models,
+                            building on what Jurassic Park had started. More advanced particle systems, image processing,
+                            and more were all happening too! Check out
+                            <a href="https://www.youtube.com/watch?v=qC5Y9W-E-po" target="_blank">this video</a> for a summary.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/geometryshader.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            The pipeline with the geometry shader step added.
+                        </p>
+                        <p>&emsp;&emsp;Following this work, the Khronos group introduced another shader in 2010 with the release
+                            of OpenGL 4.0. The line between the vertex shader and the geometry shader was taking too long.
+                            The process of dividing the vertices up into smaller primitives (called tessellation) to run
+                            geometric logic on was simply too costly to run on the CPU. So they made the tessellation shader.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/tessellationshader.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            The pipeline with the tessellation shader step added.
+                        </p>
+                        <p>&emsp;&emsp;A year later in 2011, Mozilla, in collaboration with the Khronos group, created WebGL,
+                            which is the same thing as OpenGL, but with a Javascript API instead of a C/C++ one. This meant
+                            that any graphics program you wanted to run you could now run in a browser using Javascript!
+                            Check out
+                            <a href="http://webglsamples.org/" target="_blank">this dope website</a> for some examples!
+                        </p>
+                        <p>&emsp;&emsp;Today the most innovative work in computer graphics is being done with AI, big data,
+                             sourcemapping, and parrelelization. AIs are now able to recognize sketches drawn by humans, and generate plausible
+                            shapes for things like lamps or airplanes. Big data allows us to fully realize things like timelapse
+                            videos without having the background get jumpy or distorted. Sourcemapping can now manipulate
+                            videos in real time, altering the target video based on input from the source video 
+                            (<a href="https://www.youtube.com/watch?v=ohmajJTcpNk" target="_blank">Here’s a fun example</a>). The most important innovation, however, has come from a push towards
+                            thread-based parallel programming. Some members of the Khronos group split to a new project called
+                            Vulkan, created in February of 2016, which is now the primary alternative to OpenGL. The main
+                            difference between the two is that Vulkan gives you lower level control over the task scheduling
+                            and threading that the operating system provides, and allows for the entire pipeline to be run
+                            in parallel with others on different threads.
+                        </p>
+                        <div class="card-image">
+                            <center>
+                                <img src="/static/fullpipeline.png" alt="Placeholder image">
+                            </center>
+                        </div>
+                        <p style="text-align: center; font-size: 11;">
+                            Mmmm sweet sweet threads.
+                        </p>
+                        <p style="text-align: center;">It’s an exciting time in the world of graphics programming! 
+                            Who knows where we’ll go next! It's important that you know that I'm still learning this as I go, 
+                            so if I got anything wrong in this post please email me and I'll fix it!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-2 is-8">
+                    <h3 class="title is-4" align="center">
+                        Sources
+                    </h3>
+                    <div class="content is-medium" align="center">
+                        <p>
+                            <a target="_blank" href="http://www.slate.com/articles/technology/technology/2014/10/the_invention_of_pong_how_nolan_bushnell_launched_the_video_game_industry.html">
+                                The Birth of Pong
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="http://www.cs.cmu.edu/~ph/nyit/masson/history.htm">
+                                History of Computer Graphics
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="http://www.commodore.ca/commodore-products/commodore-64-the-best-selling-computer-in-history/">
+                                The Commodore 64
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="http://www.computerhistory.org/atchm/pixars-luxo-jr/">
+                                Pixar's Luxo Jr.
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="http://pixar-animation.weebly.com/pixars-animation-process.html">
+                                Pixar's Animation Process
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="https://www.khronos.org/opengl/wiki/History_of_OpenGL">
+                                History of OpenGL
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="https://www.mozilla.org/en-US/about/history/details/">
+                                History of the Mozilla Project
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="https://www.khronos.org/webgl/wiki/Getting_Started">
+                                WebGL Specification
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="https://www.siggraph.org/">
+                                Siggraph
+                            </a>
+                        </p>
+                        <p>
+                            <a target="_blank" href="https://www.khronos.org/vulkan/">
+                                Vulkan
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        var items = document.querySelectorAll(".timeline li");
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        function callbackFunc() {
+            for (var i = 0; i < items.length; i++) {
+                if (isElementInViewport(items[i])) {
+                    items[i].classList.add("in-view");
+                }
+            }
+        }
+        window.addEventListener("load", callbackFunc);
+        window.addEventListener("resize", callbackFunc);
+        window.addEventListener("scroll", callbackFunc);
+    })();
+</script>
+
+</html>
